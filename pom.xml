@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.elbertribeiro</groupId>
-    <artifactId>kmovieskseries</artifactId>
+    <artifactId>kmovieskseries-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kmovieskseries</name>
     <description>kmovieskseries</description>
