@@ -1,5 +1,6 @@
 package com.elbertribeiro.kmovieskseries.model.entity;
 
+import com.elbertribeiro.kmovieskseries.model.dto.SerieDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +18,14 @@ public class Serie {
     private String tipo;
     private Integer temporadas;
     private Integer episodiosPorTemporada;
+
+    public Serie(SerieDto serieDto) {
+        this.titulo = serieDto.getTipo();
+        this.plataforma = serieDto.getPlataforma();
+        this.tipo = serieDto.getTipo();
+        this.temporadas = serieDto.getTemporadas();
+        this.episodiosPorTemporada = serieDto.getEpisodiosPorTemporada();
+    }
 
     public Long getId() {
         return id;
