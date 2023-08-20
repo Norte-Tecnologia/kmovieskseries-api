@@ -1,8 +1,5 @@
-package com.elbertribeiro.kmovieskseries.controller;
+package com.elbertribeiro.kmovieskseries.serie;
 
-import com.elbertribeiro.kmovieskseries.model.dto.SerieDto;
-import com.elbertribeiro.kmovieskseries.model.entity.Serie;
-import com.elbertribeiro.kmovieskseries.service.SerieService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,6 +1,5 @@
-package com.elbertribeiro.kmovieskseries.model.entity;
+package com.elbertribeiro.kmovieskseries.serie;
 
-import com.elbertribeiro.kmovieskseries.model.dto.SerieDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

@@ -1,6 +1,5 @@
-package com.elbertribeiro.kmovieskseries.model.dto;
+package com.elbertribeiro.kmovieskseries.serie;
 
-import com.elbertribeiro.kmovieskseries.model.entity.Serie;
 import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
