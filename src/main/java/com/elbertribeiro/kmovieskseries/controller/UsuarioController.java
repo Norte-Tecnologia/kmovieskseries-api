@@ -17,6 +17,7 @@ public class UsuarioController {
         Map<String, Object>  map = new HashMap<>();
         map.put("name", principal.getAttribute("name"));
         map.put("email", principal.getAttribute("email"));
+        map.put("id", principal.getAttribute("sub"));
         return map;
     }
 }
