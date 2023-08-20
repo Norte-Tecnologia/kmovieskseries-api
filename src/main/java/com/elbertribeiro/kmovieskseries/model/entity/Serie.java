@@ -12,10 +12,9 @@ public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String titulo;
     private String plataforma;
-    private String tipo; // série ou filme
+    private String tipo;
     private Integer temporadas;
     private Integer episodiosPorTemporada;
 
