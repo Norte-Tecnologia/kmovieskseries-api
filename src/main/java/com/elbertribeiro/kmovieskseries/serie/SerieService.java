@@ -1,7 +1,5 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
-import com.elbertribeiro.kmovieskseries.serie.Serie;
-import com.elbertribeiro.kmovieskseries.serie.SerieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
