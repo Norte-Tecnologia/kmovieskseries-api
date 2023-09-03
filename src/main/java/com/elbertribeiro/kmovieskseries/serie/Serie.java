@@ -26,6 +26,9 @@ public class Serie {
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
+    public Serie() {
+    }
+
     public Long getId() {
         return id;
     }
