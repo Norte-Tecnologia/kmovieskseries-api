@@ -17,7 +17,11 @@ public class SerieController {
 
     @GetMapping
     public List<SerieDto> listarSeries() {
-        return serieService.listarSeries().stream().map(SerieDto::new).collect(Collectors.toList());
+        return serieService
+                .listarSeries()
+                .stream()
+                .map(SerieConvert::serieToDto)
+                .collect(Collectors.toList());
     }
 
     @PostMapping
@@ -25,7 +29,7 @@ public class SerieController {
         return serieService.salvarSerie(
                 Optional
                         .ofNullable(serieDto)
-                        .map(Serie::new)
+                        .map(SerieConvert::serieToEntity)
                         .orElseThrow(() -> new RuntimeException("n deu bom"))
         );
     }

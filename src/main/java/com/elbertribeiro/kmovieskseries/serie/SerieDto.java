@@ -8,17 +8,18 @@ import java.util.Objects;
 /**
  * DTO for {@link Serie}
  */
-public class SerieDto implements Serializable {
-    @NotNull(message = "O titulo da obra não pode ser nulo")
-    private final String titulo;
-    @NotNull
-    private final String plataforma;
-    @NotNull
-    private final String tipo;
-    private final Integer temporadas;
-    private final Integer episodiosPorTemporada;
-
-    public SerieDto(String titulo, String plataforma, String tipo, Integer temporadas, Integer episodiosPorTemporada) {
+public record SerieDto(
+        @NotNull(message = "O titulo da obra não pode ser nulo")
+        String titulo,
+        String plataforma,
+        @NotNull
+        String tipo,
+        Integer temporadas,
+        Integer episodiosPorTemporada
+) {
+    public SerieDto(@NotNull(message = "O titulo da obra não pode ser nulo")
+                    String titulo, String plataforma, @NotNull
+                    String tipo, Integer temporadas, Integer episodiosPorTemporada) {
         this.titulo = titulo;
         this.plataforma = plataforma;
         this.tipo = tipo;
@@ -26,58 +27,28 @@ public class SerieDto implements Serializable {
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public SerieDto(Serie serie) {
-        this.titulo = serie.getTitulo();
-        this.plataforma = serie.getPlataforma();
-        this.tipo = serie.getTipo();
-        this.temporadas = serie.getTemporadas();
-        this.episodiosPorTemporada = getEpisodiosPorTemporada();
-    }
-
-    public String getTitulo() {
+    @Override
+    public String titulo() {
         return titulo;
     }
 
-    public String getPlataforma() {
+    @Override
+    public String plataforma() {
         return plataforma;
     }
 
-    public String getTipo() {
+    @Override
+    public String tipo() {
         return tipo;
     }
 
-    public Integer getTemporadas() {
+    @Override
+    public Integer temporadas() {
         return temporadas;
     }
 
-    public Integer getEpisodiosPorTemporada() {
+    @Override
+    public Integer episodiosPorTemporada() {
         return episodiosPorTemporada;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SerieDto entity = (SerieDto) o;
-        return Objects.equals(this.titulo, entity.titulo) &&
-                Objects.equals(this.plataforma, entity.plataforma) &&
-                Objects.equals(this.tipo, entity.tipo) &&
-                Objects.equals(this.temporadas, entity.temporadas) &&
-                Objects.equals(this.episodiosPorTemporada, entity.episodiosPorTemporada);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(titulo, plataforma, tipo, temporadas, episodiosPorTemporada);
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "(" +
-                "titulo = " + titulo + ", " +
-                "plataforma = " + plataforma + ", " +
-                "tipo = " + tipo + ", " +
-                "temporadas = " + temporadas + ", " +
-                "episodiosPorTemporada = " + episodiosPorTemporada + ")";
     }
 }

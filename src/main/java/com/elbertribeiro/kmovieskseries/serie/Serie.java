@@ -18,12 +18,12 @@ public class Serie {
     private Integer temporadas;
     private Integer episodiosPorTemporada;
 
-    public Serie(SerieDto serieDto) {
-        this.titulo = serieDto.getTipo();
-        this.plataforma = serieDto.getPlataforma();
-        this.tipo = serieDto.getTipo();
-        this.temporadas = serieDto.getTemporadas();
-        this.episodiosPorTemporada = serieDto.getEpisodiosPorTemporada();
+    public Serie(String titulo, String plataforma, String tipo, Integer temporadas, Integer episodiosPorTemporada) {
+        this.titulo = titulo;
+        this.plataforma = plataforma;
+        this.tipo = tipo;
+        this.temporadas = temporadas;
+        this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
     public Long getId() {
