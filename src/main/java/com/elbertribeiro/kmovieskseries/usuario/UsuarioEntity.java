@@ -1,16 +1,16 @@
 package com.elbertribeiro.kmovieskseries.usuario;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "TAB_USUARIO")
 public class UsuarioEntity implements Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "TU_ID")
     private Integer id;
 
+    @Column(name = "TU_NAME")
     private String name;
 
     public UsuarioEntity(String name) {
