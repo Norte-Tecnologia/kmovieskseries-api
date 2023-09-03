@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuario")
@@ -19,7 +20,7 @@ public class UsuarioController {
 
     @GetMapping
     public Map<String, Object> user(@AuthenticationPrincipal OAuth2User principal) {
-        Map<String, Object>  map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("name", principal.getAttribute("name"));
         map.put("email", principal.getAttribute("email"));
         map.put("id", principal.getAttribute("sub"));
@@ -29,7 +30,11 @@ public class UsuarioController {
     @PostMapping
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    public Integer createUser() {
-        return usuarioService.createIdUser();
+    public Integer createUser(@RequestBody UsuarioDto usuarioDto) {
+        return usuarioService
+                .createIdUser(Optional.ofNullable(usuarioDto)
+                        .map(UsuarioConvert::usuarioToEntity)
+                        .orElseThrow()
+                );
     }
 }
