@@ -1,10 +1,10 @@
 package com.elbertribeiro.kmovieskseries.usuario;
 
 public record UsuarioDto(
-        String nomeUsuario
+        String name
 ) implements Usuario{
     @Override
     public String getName() {
-        return this.nomeUsuario;
+        return this.name;
     }
 }

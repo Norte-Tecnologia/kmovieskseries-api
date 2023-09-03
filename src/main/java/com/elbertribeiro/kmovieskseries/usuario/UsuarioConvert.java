@@ -5,6 +5,6 @@ public class UsuarioConvert {
     }
 
     public static UsuarioEntity usuarioToEntity(UsuarioDto usuarioDto){
-        return new UsuarioEntity(usuarioDto.nomeUsuario());
+        return new UsuarioEntity(usuarioDto.getName());
     }
 }
