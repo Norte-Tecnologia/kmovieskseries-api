@@ -1,5 +1,7 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
+import com.elbertribeiro.kmovieskseries.usuario.UsuarioEntity;
+
 public class SerieConvert {
     private SerieConvert() {
     }
@@ -10,7 +12,8 @@ public class SerieConvert {
                 serie.getPlataforma(),
                 serie.getTipo(),
                 serie.getTemporadas(),
-                serie.getEpisodiosPorTemporada()
+                serie.getEpisodiosPorTemporada(),
+                serie.getUsuario().getId()
         );
     }
 
@@ -21,6 +24,9 @@ public class SerieConvert {
         serieEntity.setTitulo(serie.titulo());
         serieEntity.setTemporadas(serie.temporadas());
         serieEntity.setEpisodiosPorTemporada(serie.episodiosPorTemporada());
+        UsuarioEntity usr = new UsuarioEntity();
+        usr.setId(serie.idUsuario());
+        serieEntity.setUsuario(usr);
         return serieEntity;
     }
 }
