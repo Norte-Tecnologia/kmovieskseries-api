@@ -15,12 +15,12 @@ public class SerieConvert {
     }
 
     public static Serie serieToEntity(SerieDto serie) {
-        return new Serie(
-                serie.titulo(),
-                serie.plataforma(),
-                serie.tipo(),
-                serie.temporadas(),
-                serie.episodiosPorTemporada()
-        );
+        Serie serieEntity = new Serie();
+        serieEntity.setPlataforma(serie.plataforma());
+        serieEntity.setTipo(serie.tipo());
+        serieEntity.setTitulo(serie.titulo());
+        serieEntity.setTemporadas(serie.temporadas());
+        serieEntity.setEpisodiosPorTemporada(serie.episodiosPorTemporada());
+        return serieEntity;
     }
 }
