@@ -1,8 +1,7 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
+import com.elbertribeiro.kmovieskseries.usuario.UsuarioEntity;
 import jakarta.persistence.*;
-
-import java.util.Objects;
 
 @Entity
 public class Serie {
@@ -14,17 +13,9 @@ public class Serie {
     private String tipo;
     private Integer temporadas;
     private Integer episodiosPorTemporada;
-
-    public Serie(String titulo, String plataforma, String tipo, Integer temporadas, Integer episodiosPorTemporada) {
-        this.titulo = titulo;
-        this.plataforma = plataforma;
-        this.tipo = tipo;
-        this.temporadas = temporadas;
-        this.episodiosPorTemporada = episodiosPorTemporada;
-    }
-
-    public Serie() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "TU_ID", nullable = false)
+    private UsuarioEntity usuario;
 
     public Long getId() {
         return id;
@@ -74,28 +65,11 @@ public class Serie {
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Serie serie = (Serie) o;
-        return Objects.equals(id, serie.id) && Objects.equals(titulo, serie.titulo) && Objects.equals(plataforma, serie.plataforma) && Objects.equals(tipo, serie.tipo) && Objects.equals(temporadas, serie.temporadas) && Objects.equals(episodiosPorTemporada, serie.episodiosPorTemporada);
+    public UsuarioEntity getUsuario() {
+        return usuario;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, titulo, plataforma, tipo, temporadas, episodiosPorTemporada);
-    }
-
-    @Override
-    public String toString() {
-        return "Serie{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", plataforma='" + plataforma + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", temporadas=" + temporadas +
-                ", episodiosPorTemporada=" + episodiosPorTemporada +
-                '}';
+    public void setUsuario(UsuarioEntity usuario) {
+        this.usuario = usuario;
     }
 }
