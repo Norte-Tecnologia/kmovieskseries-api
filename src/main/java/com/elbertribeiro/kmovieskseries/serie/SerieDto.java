@@ -13,6 +13,7 @@ public record SerieDto(
         String tipo,
         Integer temporadas,
         Integer episodiosPorTemporada,
-        Integer idUsuario
+        Integer idUsuario,
+        Boolean assistido
 ) {
 }

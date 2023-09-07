@@ -13,6 +13,8 @@ public class Serie {
     private String tipo;
     private Integer temporadas;
     private Integer episodiosPorTemporada;
+    private Boolean assistido;
+
     @ManyToOne
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "TU_ID", nullable = false)
     private UsuarioEntity usuario;
@@ -71,5 +73,13 @@ public class Serie {
 
     public void setUsuario(UsuarioEntity usuario) {
         this.usuario = usuario;
+    }
+
+    public Boolean getAssistido() {
+        return assistido;
+    }
+
+    public void setAssistido(Boolean assistido) {
+        this.assistido = assistido;
     }
 }

@@ -13,7 +13,8 @@ public class SerieConvert {
                 serie.getTipo(),
                 serie.getTemporadas(),
                 serie.getEpisodiosPorTemporada(),
-                serie.getUsuario().getId()
+                serie.getUsuario().getId(),
+                serie.getAssistido()
         );
     }
 
@@ -26,6 +27,7 @@ public class SerieConvert {
         serieEntity.setEpisodiosPorTemporada(serie.episodiosPorTemporada());
         UsuarioEntity usr = new UsuarioEntity();
         usr.setId(serie.idUsuario());
+        serieEntity.setAssistido(serie.assistido());
         serieEntity.setUsuario(usr);
         return serieEntity;
     }
