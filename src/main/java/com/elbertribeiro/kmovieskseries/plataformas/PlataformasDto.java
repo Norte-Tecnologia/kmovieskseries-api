@@ -1,15 +1,20 @@
 package com.elbertribeiro.kmovieskseries.plataformas;
 
 public record PlataformasDto(
-        Integer id,
-        String name
+        Long id,
+        String name,
+        String urlLogo
 ) implements Plataformas {
     @Override
-    public Integer getId() {
+    public Long getId() {
         return this.id;
     }
     @Override
     public String getName() {
         return this.name;
+    }
+    @Override
+    public String getUrlLogo() {
+        return this.urlLogo;
     }
 }

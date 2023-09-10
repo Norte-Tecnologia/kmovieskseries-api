@@ -7,7 +7,8 @@ public class PlataformasConvert {
     public static PlataformasDto plataformaToDto(PlataformasEntity plataformasEntity) {
         return new PlataformasDto(
                 plataformasEntity.getId(),
-                plataformasEntity.getName()
+                plataformasEntity.getName(),
+                plataformasEntity.getUrlLogo()
         );
     }
 
@@ -15,6 +16,7 @@ public class PlataformasConvert {
         PlataformasEntity plataformasEntity = new PlataformasEntity();
         plataformasEntity.setId(plataformasDto.id());
         plataformasEntity.setName(plataformasDto.name());
+        plataformasEntity.setUrlLogo(plataformasDto.getUrlLogo());
         return plataformasEntity;
     }
 }

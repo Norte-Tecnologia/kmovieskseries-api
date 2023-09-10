@@ -16,6 +16,10 @@ public class PlataformasService {
         return plataformasRepository.save(plataformasEntity);
     }
 
+    public PlataformasEntity listarPlataformasByNome(String name) {
+        return plataformasRepository.findAllByName(name);
+    }
+
     public List<PlataformasEntity> listarPlataformas() {
         return plataformasRepository.findAll();
     }
