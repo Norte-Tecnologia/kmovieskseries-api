@@ -1,6 +1,5 @@
 package com.elbertribeiro.kmovieskseries.plataformas;
 
-import com.elbertribeiro.kmovieskseries.serie.Serie;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,10 +15,6 @@ public class PlataformasEntity implements Plataformas {
 
     @Column(name = "TP_URL_LOGO")
     private String urlLogo;
-
-//    @ManyToOne
-//    @JoinColumn(name = "ID_SERIE", referencedColumnName = "TS_ID", nullable = false)
-//    private Serie serie;
 
     public PlataformasEntity(String name, String urlLogo) {
         this.name = name;
@@ -52,12 +47,4 @@ public class PlataformasEntity implements Plataformas {
     public void setUrlLogo(String urlLogo) {
         this.urlLogo = urlLogo;
     }
-
-//    public Serie getSerie() {
-//        return serie;
-//    }
-//
-//    public void setSerie(Serie serie) {
-//        this.serie = serie;
-//    }
 }
