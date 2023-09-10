@@ -12,7 +12,7 @@ public class Serie {
     private Long id;
     @Column(name = "TS_TITULO")
     private String titulo;
-    //@OneToMany
+    @Column(name = "TS_PLATAFORMA")
     private String plataforma;
     private String urlLogo;
     @Column(name = "TS_TIPO")
@@ -26,8 +26,6 @@ public class Serie {
     @ManyToOne
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "TU_ID", nullable = false)
     private UsuarioEntity usuario;
-//    @OneToMany(mappedBy="serie")
-//    private Set<PlataformasEntity> plataformasEntity;
 
     public Long getId() {
         return id;
@@ -92,15 +90,6 @@ public class Serie {
     public void setAssistido(Boolean assistido) {
         this.assistido = assistido;
     }
-
-//    public Set<PlataformasEntity> getPlataformasEntity() {
-//        return plataformasEntity;
-//    }
-//
-//    public void setPlataformasEntity(Set<PlataformasEntity> plataformasEntity) {
-//        this.plataformasEntity = plataformasEntity;
-//    }
-
 
     public String getUrlLogo() {
         return urlLogo;
