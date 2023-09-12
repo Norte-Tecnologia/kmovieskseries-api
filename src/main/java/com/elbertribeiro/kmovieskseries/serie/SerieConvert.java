@@ -2,6 +2,9 @@ package com.elbertribeiro.kmovieskseries.serie;
 
 import com.elbertribeiro.kmovieskseries.usuario.UsuarioEntity;
 
+import static com.elbertribeiro.kmovieskseries.plataformas.PlataformasConvert.plataformaToDto;
+import static com.elbertribeiro.kmovieskseries.plataformas.PlataformasConvert.plataformaToEntity;
+
 public class SerieConvert {
     private SerieConvert() {
     }
@@ -9,8 +12,8 @@ public class SerieConvert {
     public static SerieDto serieToDto(SerieEntity serieEntity) {
         return new SerieDto(
                 serieEntity.getTitulo(),
-                serieEntity.getPlataforma(),
-                serieEntity.getUrlLogo(),
+                plataformaToDto(serieEntity.getPlataforma()),
+                serieEntity.getPlataforma().getUrlLogo(),
                 serieEntity.getTipo(),
                 serieEntity.getTemporadas(),
                 serieEntity.getEpisodiosPorTemporada(),
