@@ -1,7 +1,7 @@
 package com.elbertribeiro.kmovieskseries.plataformas;
 
 public class PlataformasConvert {
-    public PlataformasConvert() {
+    private PlataformasConvert() {
     }
 
     public static PlataformasDto plataformaToDto(PlataformasEntity plataformasEntity) {
