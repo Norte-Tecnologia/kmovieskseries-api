@@ -25,7 +25,7 @@ public class SerieController {
     }
 
     @PostMapping
-    public Serie criarSerie(@RequestBody SerieDto serieDto) {
+    public SerieEntity criarSerie(@RequestBody SerieDto serieDto) {
         return serieService.salvarSerie(
                 Optional
                         .ofNullable(serieDto)

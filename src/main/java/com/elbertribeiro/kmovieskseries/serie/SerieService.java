@@ -17,22 +17,22 @@ public class SerieService {
         this.plataformasService = plataformasService;
     }
 
-    public Serie salvarSerie(Serie serie) {
-        PlataformasEntity plataformasEntity = plataformasService.listarPlataformasByNome(serie.getPlataforma());
+    public SerieEntity salvarSerie(SerieEntity serieEntity) {
+        PlataformasEntity plataformasEntity = plataformasService.listarPlataformasByNome(serieEntity.getPlataforma());
         if(plataformasEntity == null) throw new RuntimeException("Plataforma não encontrada");
-        serie.setUrlLogo(plataformasEntity.getUrlLogo());
-        return serieRepository.save(serie);
+        serieEntity.setUrlLogo(plataformasEntity.getUrlLogo());
+        return serieRepository.save(serieEntity);
     }
 
     public String atualizarAssistido(Boolean assistido, String titulo) {
-        Serie serie = serieRepository.findAllByTitulo(titulo);
-        if(serie == null) throw new RuntimeException("Série não encontrada");
-        serie.setAssistido(assistido);
-        serieRepository.save(serie);
+        SerieEntity serieEntity = serieRepository.findAllByTitulo(titulo);
+        if(serieEntity == null) throw new RuntimeException("Série não encontrada");
+        serieEntity.setAssistido(assistido);
+        serieRepository.save(serieEntity);
         return "Status da obra alterado";
     }
 
-    public List<Serie> listarSeries() {
+    public List<SerieEntity> listarSeries() {
         return serieRepository.findAll();
     }
 }

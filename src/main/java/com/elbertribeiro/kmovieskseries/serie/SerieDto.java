@@ -3,7 +3,7 @@ package com.elbertribeiro.kmovieskseries.serie;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * DTO for {@link Serie}
+ * DTO for {@link SerieEntity}
  */
 public record SerieDto(
         @NotNull(message = "O titulo da obra não pode ser nulo")

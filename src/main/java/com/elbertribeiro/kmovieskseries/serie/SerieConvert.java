@@ -6,21 +6,21 @@ public class SerieConvert {
     private SerieConvert() {
     }
 
-    public static SerieDto serieToDto(Serie serie) {
+    public static SerieDto serieToDto(SerieEntity serieEntity) {
         return new SerieDto(
-                serie.getTitulo(),
-                serie.getPlataforma(),
-                serie.getUrlLogo(),
-                serie.getTipo(),
-                serie.getTemporadas(),
-                serie.getEpisodiosPorTemporada(),
-                serie.getUsuario().getId(),
-                serie.getAssistido()
+                serieEntity.getTitulo(),
+                serieEntity.getPlataforma(),
+                serieEntity.getUrlLogo(),
+                serieEntity.getTipo(),
+                serieEntity.getTemporadas(),
+                serieEntity.getEpisodiosPorTemporada(),
+                serieEntity.getUsuario().getId(),
+                serieEntity.getAssistido()
         );
     }
 
-    public static Serie serieToEntity(SerieDto serie) {
-        Serie serieEntity = new Serie();
+    public static SerieEntity serieToEntity(SerieDto serie) {
+        SerieEntity serieEntity = new SerieEntity();
         serieEntity.setPlataforma(serie.plataforma());
         serieEntity.setTipo(serie.tipo());
         serieEntity.setTitulo(serie.titulo());
