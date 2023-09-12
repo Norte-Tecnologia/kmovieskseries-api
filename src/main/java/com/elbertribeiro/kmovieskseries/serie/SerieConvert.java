@@ -21,7 +21,7 @@ public class SerieConvert {
 
     public static SerieEntity serieToEntity(SerieDto serie) {
         SerieEntity serieEntity = new SerieEntity();
-        serieEntity.setPlataforma(serie.plataforma());
+        serieEntity.setPlataforma(plataformaToEntity(serie.plataforma()));
         serieEntity.setTipo(serie.tipo());
         serieEntity.setTitulo(serie.titulo());
         serieEntity.setTemporadas(serie.temporadas());
