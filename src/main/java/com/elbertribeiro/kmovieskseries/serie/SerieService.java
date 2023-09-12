@@ -18,9 +18,9 @@ public class SerieService {
     }
 
     public SerieEntity salvarSerie(SerieEntity serieEntity) {
-        PlataformasEntity plataformasEntity = plataformasService.listarPlataformasByNome(serieEntity.getPlataforma());
-        if(plataformasEntity == null) throw new RuntimeException("Plataforma não encontrada");
-        serieEntity.setUrlLogo(plataformasEntity.getUrlLogo());
+        PlataformasEntity plataformasEntity = plataformasService
+                .listarPlataformasByNome(serieEntity.getPlataforma().getName());
+        serieEntity.setPlataforma(plataformasEntity);
         return serieRepository.save(serieEntity);
     }
 

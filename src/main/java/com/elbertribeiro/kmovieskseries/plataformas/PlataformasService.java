@@ -3,6 +3,7 @@ package com.elbertribeiro.kmovieskseries.plataformas;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PlataformasService {
@@ -17,7 +18,9 @@ public class PlataformasService {
     }
 
     public PlataformasEntity listarPlataformasByNome(String name) {
-        return plataformasRepository.findAllByName(name);
+        return Optional
+                .ofNullable(plataformasRepository
+                        .findAllByName(name)).orElseThrow(() -> new RuntimeException("Plataforma não encontrada"));
     }
 
     public List<PlataformasEntity> listarPlataformas() {
