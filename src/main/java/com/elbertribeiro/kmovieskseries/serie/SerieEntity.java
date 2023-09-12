@@ -14,7 +14,6 @@ public class SerieEntity {
     private String titulo;
     @Column(name = "TS_PLATAFORMA")
     private String plataforma;
-    private String urlLogo;
     @Column(name = "TS_TIPO")
     private String tipo;
     @Column(name = "TS_TEMPORADAS")
@@ -89,13 +88,5 @@ public class SerieEntity {
 
     public void setAssistido(Boolean assistido) {
         this.assistido = assistido;
-    }
-
-    public String getUrlLogo() {
-        return urlLogo;
-    }
-
-    public void setUrlLogo(String urlLogo) {
-        this.urlLogo = urlLogo;
     }
 }
