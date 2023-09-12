@@ -1,5 +1,6 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
+import com.elbertribeiro.kmovieskseries.plataformas.PlataformasEntity;
 import com.elbertribeiro.kmovieskseries.usuario.UsuarioEntity;
 import jakarta.persistence.*;
 
@@ -12,8 +13,9 @@ public class SerieEntity {
     private Long id;
     @Column(name = "TS_TITULO")
     private String titulo;
-    @Column(name = "TS_PLATAFORMA")
-    private String plataforma;
+    @ManyToOne
+    @JoinColumn(name = "TS_PLATAFORMA", referencedColumnName = "TP_ID", nullable = false)
+    private PlataformasEntity plataforma;
     @Column(name = "TS_TIPO")
     private String tipo;
     @Column(name = "TS_TEMPORADAS")
@@ -42,11 +44,11 @@ public class SerieEntity {
         this.titulo = titulo;
     }
 
-    public String getPlataforma() {
+    public PlataformasEntity getPlataforma() {
         return plataforma;
     }
 
-    public void setPlataforma(String plataforma) {
+    public void setPlataforma(PlataformasEntity plataforma) {
         this.plataforma = plataforma;
     }
 
