@@ -9,6 +9,7 @@ public record SerieDto(
         @NotNull(message = "O titulo da obra não pode ser nulo")
         String titulo,
         String plataforma,
+        String urlLogo,
         @NotNull
         String tipo,
         Integer temporadas,

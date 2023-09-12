@@ -4,3 +4,6 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: false
+  datasource:
+    url: jdbc:h2:file:./resources/bancodb
+    username: sa

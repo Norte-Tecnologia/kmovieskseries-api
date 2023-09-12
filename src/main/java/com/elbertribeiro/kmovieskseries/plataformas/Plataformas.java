@@ -1,6 +1,7 @@
 package com.elbertribeiro.kmovieskseries.plataformas;
 
 public interface Plataformas {
-    Integer getId();
+    Long getId();
     String getName();
+    String getUrlLogo();
 }

@@ -1,5 +1,6 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,5 +32,11 @@ public class SerieController {
                         .map(SerieConvert::serieToEntity)
                         .orElseThrow(() -> new RuntimeException("n deu bom"))
         );
+    }
+
+    @PutMapping(value = "/{assistido}/{titulo}")
+    public String criarSerie(@PathVariable @NotNull Boolean assistido,
+                             @PathVariable @NotNull String titulo) {
+        return serieService.atualizarAssistido(assistido, titulo);
     }
 }

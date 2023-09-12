@@ -10,6 +10,7 @@ public class SerieConvert {
         return new SerieDto(
                 serie.getTitulo(),
                 serie.getPlataforma(),
+                serie.getUrlLogo(),
                 serie.getTipo(),
                 serie.getTemporadas(),
                 serie.getEpisodiosPorTemporada(),
