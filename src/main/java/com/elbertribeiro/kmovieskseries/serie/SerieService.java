@@ -5,6 +5,7 @@ import com.elbertribeiro.kmovieskseries.plataformas.PlataformasService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SerieService {
@@ -17,6 +18,12 @@ public class SerieService {
         this.plataformasService = plataformasService;
     }
 
+    public SerieEntity buscaSerie(String titulo){
+        return Optional.ofNullable(serieRepository
+                .findAllByTitulo(titulo))
+                .orElseThrow(() -> new RuntimeException("Série não encontrada"));
+    }
+
     public SerieEntity salvarSerie(SerieEntity serieEntity) {
         PlataformasEntity plataformasEntity = plataformasService
                 .listarPlataformasByNome(serieEntity.getPlataforma().getName());
@@ -25,8 +32,7 @@ public class SerieService {
     }
 
     public String atualizarAssistido(Boolean assistido, String titulo) {
-        SerieEntity serieEntity = serieRepository.findAllByTitulo(titulo);
-        if(serieEntity == null) throw new RuntimeException("Série não encontrada");
+        SerieEntity serieEntity = this.buscaSerie(titulo);
         serieEntity.setAssistido(assistido);
         serieRepository.save(serieEntity);
         return "Status da obra alterado";
