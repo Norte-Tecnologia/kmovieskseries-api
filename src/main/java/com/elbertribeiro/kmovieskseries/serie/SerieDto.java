@@ -1,5 +1,6 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
+import com.elbertribeiro.kmovieskseries.plataformas.PlataformasDto;
 import jakarta.validation.constraints.NotNull;
 
 /**
@@ -8,7 +9,7 @@ import jakarta.validation.constraints.NotNull;
 public record SerieDto(
         @NotNull(message = "O titulo da obra não pode ser nulo")
         String titulo,
-        String plataforma,
+        PlataformasDto plataforma,
         String urlLogo,
         @NotNull
         String tipo,
