@@ -1,0 +1,1 @@
+link para ambiente de hom: https://kmovieskseries-hom-c7d011b04fcd.herokuapp.com/
