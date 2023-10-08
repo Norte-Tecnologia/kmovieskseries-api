@@ -34,7 +34,7 @@ public class UsuarioController {
         return usuarioService
                 .createIdUser(Optional.ofNullable(usuarioDto)
                         .map(UsuarioConvert::usuarioToEntity)
-                        .orElseThrow()
+                        .orElseThrow(() -> new RuntimeException("Erro ao criar usuario"))
                 );
     }
 }
