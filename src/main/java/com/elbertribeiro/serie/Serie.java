@@ -1,7 +1,7 @@
 package com.elbertribeiro.serie;
 
-import com.elbertribeiro.plataformas.Plataformas;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("TAB_SERIE")
