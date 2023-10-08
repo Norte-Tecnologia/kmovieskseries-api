@@ -1,6 +1,6 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
-import com.elbertribeiro.kmovieskseries.usuario.UsuarioEntity;
+import com.elbertribeiro.kmovieskseries.usuario.Usuario;
 
 import static com.elbertribeiro.kmovieskseries.plataformas.PlataformasConvert.plataformaToDto;
 import static com.elbertribeiro.kmovieskseries.plataformas.PlataformasConvert.plataformaToEntity;
@@ -29,7 +29,7 @@ public class SerieConvert {
         serieEntity.setTitulo(serie.titulo());
         serieEntity.setTemporadas(serie.temporadas());
         serieEntity.setEpisodiosPorTemporada(serie.episodiosPorTemporada());
-        UsuarioEntity usr = new UsuarioEntity();
+        Usuario usr = new Usuario();
         usr.setId(serie.idUsuario());
         serieEntity.setAssistido(serie.assistido());
         serieEntity.setUsuario(usr);

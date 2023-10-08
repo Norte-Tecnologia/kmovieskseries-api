@@ -4,7 +4,7 @@ public class UsuarioConvert {
     private UsuarioConvert() {
     }
 
-    public static UsuarioEntity usuarioToEntity(UsuarioDto usuarioDto){
-        return new UsuarioEntity(usuarioDto.getName());
+    public static Usuario usuarioToEntity(UsuarioDto usuarioDto){
+        return new Usuario(usuarioDto.name());
     }
 }
