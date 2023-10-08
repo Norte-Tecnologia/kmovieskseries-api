@@ -4,6 +4,7 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: false
-  datasource:
-    url: jdbc:h2:file:./resources/bancodb
-    username: sa
+  data:
+    mongodb:
+      uri: mongodb+srv://usr_kmovieskseries:RT5W0XkUA3fXToT3@kmovieskseries.5je07il.mongodb.net/?retryWrites=true&w=majority
+      database: kmovieskseries
