@@ -1,7 +1,7 @@
 package com.elbertribeiro.plataformas;
 
 public record PlataformasDto(
-        Long id,
+        String id,
         String name,
         String urlLogo
 ) {

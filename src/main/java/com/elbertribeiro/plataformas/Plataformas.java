@@ -1,14 +1,13 @@
 package com.elbertribeiro.plataformas;
 
 import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "TAB_PLATAFORMAS")
+@Document("TAB_PLATAFORMAS")
 public class Plataformas {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TP_ID")
-    private Long id;
+    private String id;
 
     @Column(name = "TP_NAME")
     private String name;
@@ -24,11 +23,11 @@ public class Plataformas {
     public Plataformas() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
