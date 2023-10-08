@@ -4,17 +4,17 @@ public class TiposConvert {
     public TiposConvert() {
     }
 
-    public static TiposDto tipoToDto(TiposEntity tiposEntity) {
+    public static TiposDto tipoToDto(Tipos tipos) {
         return new TiposDto(
-                tiposEntity.getId(),
-                tiposEntity.getName()
+                tipos.getId(),
+                tipos.getName()
         );
     }
 
-    public static TiposEntity tipoToEntity(TiposDto tiposDto) {
-        TiposEntity tiposEntity = new TiposEntity();
-        tiposEntity.setId(tiposDto.id());
-        tiposEntity.setName(tiposDto.name());
-        return tiposEntity;
+    public static Tipos tipoToEntity(TiposDto tiposDto) {
+        Tipos tipos = new Tipos();
+        tipos.setId(tiposDto.id());
+        tipos.setName(tiposDto.name());
+        return tipos;
     }
 }

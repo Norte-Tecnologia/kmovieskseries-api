@@ -12,11 +12,11 @@ public class TiposService {
         this.tiposRepository = tiposRepository;
     }
 
-    public TiposEntity salvarTipo(TiposEntity tiposEntity) {
-        return tiposRepository.save(tiposEntity);
+    public Tipos salvarTipo(Tipos tipos) {
+        return tiposRepository.save(tipos);
     }
 
-    public List<TiposEntity> listarTipos() {
+    public List<Tipos> listarTipos() {
         return tiposRepository.findAll();
     }
 }

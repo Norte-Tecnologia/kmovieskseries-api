@@ -24,7 +24,7 @@ public class TiposController {
     }
 
     @PostMapping
-    public TiposEntity criarPlataforma(@RequestBody TiposDto tiposDto) {
+    public Tipos criarPlataforma(@RequestBody TiposDto tiposDto) {
         return tiposService.salvarTipo(
                 Optional
                         .ofNullable(tiposDto)
