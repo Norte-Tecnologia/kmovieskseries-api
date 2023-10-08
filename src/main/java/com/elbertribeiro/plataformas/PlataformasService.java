@@ -13,17 +13,17 @@ public class PlataformasService {
         this.plataformasRepository = plataformasRepository;
     }
 
-    public PlataformasEntity salvarPlataforma(PlataformasEntity plataformasEntity) {
-        return plataformasRepository.save(plataformasEntity);
+    public Plataformas salvarPlataforma(Plataformas plataformas) {
+        return plataformasRepository.save(plataformas);
     }
 
-    public PlataformasEntity listarPlataformasByNome(String name) {
+    public Plataformas listarPlataformasByNome(String name) {
         return Optional
                 .ofNullable(plataformasRepository
                         .findAllByName(name)).orElseThrow(() -> new RuntimeException("Plataforma não encontrada"));
     }
 
-    public List<PlataformasEntity> listarPlataformas() {
+    public List<Plataformas> listarPlataformas() {
         return plataformasRepository.findAll();
     }
 }

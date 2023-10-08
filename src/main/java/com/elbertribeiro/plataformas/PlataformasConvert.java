@@ -4,19 +4,19 @@ public class PlataformasConvert {
     private PlataformasConvert() {
     }
 
-    public static PlataformasDto plataformaToDto(PlataformasEntity plataformasEntity) {
+    public static PlataformasDto plataformaToDto(Plataformas plataformas) {
         return new PlataformasDto(
-                plataformasEntity.getId(),
-                plataformasEntity.getName(),
-                plataformasEntity.getUrlLogo()
+                plataformas.getId(),
+                plataformas.getName(),
+                plataformas.getUrlLogo()
         );
     }
 
-    public static PlataformasEntity plataformaToEntity(PlataformasDto plataformasDto) {
-        PlataformasEntity plataformasEntity = new PlataformasEntity();
-        plataformasEntity.setId(plataformasDto.id());
-        plataformasEntity.setName(plataformasDto.name());
-        plataformasEntity.setUrlLogo(plataformasDto.getUrlLogo());
-        return plataformasEntity;
+    public static Plataformas plataformaToEntity(PlataformasDto plataformasDto) {
+        Plataformas plataformas = new Plataformas();
+        plataformas.setId(plataformasDto.id());
+        plataformas.setName(plataformasDto.name());
+        plataformas.setUrlLogo(plataformasDto.urlLogo());
+        return plataformas;
     }
 }

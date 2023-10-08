@@ -1,6 +1,6 @@
 package com.elbertribeiro.serie;
 
-import com.elbertribeiro.plataformas.PlataformasEntity;
+import com.elbertribeiro.plataformas.Plataformas;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,7 +14,7 @@ public class Serie {
     private String titulo;
     @ManyToOne
     @JoinColumn(name = "TS_PLATAFORMA", referencedColumnName = "TP_ID", nullable = false)
-    private PlataformasEntity plataforma;
+    private Plataformas plataforma;
     @Column(name = "TS_TIPO")
     private String tipo;
     @Column(name = "TS_TEMPORADAS")
@@ -42,11 +42,11 @@ public class Serie {
         this.titulo = titulo;
     }
 
-    public PlataformasEntity getPlataforma() {
+    public Plataformas getPlataforma() {
         return plataforma;
     }
 
-    public void setPlataforma(PlataformasEntity plataforma) {
+    public void setPlataforma(Plataformas plataforma) {
         this.plataforma = plataforma;
     }
 

@@ -24,7 +24,7 @@ public class PlataformasController {
     }
 
     @PostMapping
-    public PlataformasEntity criarPlataforma(@RequestBody PlataformasDto plataformasDto) {
+    public Plataformas criarPlataforma(@RequestBody PlataformasDto plataformasDto) {
         return plataformasService.salvarPlataforma(
                 Optional
                         .ofNullable(plataformasDto)

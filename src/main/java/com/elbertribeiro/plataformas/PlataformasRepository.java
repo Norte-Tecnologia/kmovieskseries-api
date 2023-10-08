@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PlataformasRepository extends JpaRepository<PlataformasEntity, Integer> {
+public interface PlataformasRepository extends JpaRepository<Plataformas, Integer> {
 
-    PlataformasEntity findAllByName(String name);
+    Plataformas findAllByName(String name);
 }

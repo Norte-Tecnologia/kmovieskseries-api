@@ -1,6 +1,6 @@
 package com.elbertribeiro.serie;
 
-import com.elbertribeiro.plataformas.PlataformasEntity;
+import com.elbertribeiro.plataformas.Plataformas;
 import com.elbertribeiro.plataformas.PlataformasService;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +25,9 @@ public class SerieService {
     }
 
     public Serie salvarSerie(Serie serie) {
-        PlataformasEntity plataformasEntity = plataformasService
+        Plataformas plataformas = plataformasService
                 .listarPlataformasByNome(serie.getPlataforma().getName());
-        serie.setPlataforma(plataformasEntity);
+        serie.setPlataforma(plataformas);
         return serieRepository.save(serie);
     }
 
