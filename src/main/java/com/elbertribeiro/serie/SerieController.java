@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("series")
+@RequestMapping(value = "series", produces = "application/json")
 public class SerieController {
     private final SerieService serieService;
 
