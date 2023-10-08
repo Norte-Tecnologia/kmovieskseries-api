@@ -2,19 +2,17 @@ package com.elbertribeiro.serie;
 
 import com.elbertribeiro.plataformas.Plataformas;
 import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "TAB_SERIE")
+@Document("TAB_SERIE")
 public class Serie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TS_ID")
     private Long id;
     @Column(name = "TS_TITULO")
     private String titulo;
-    @ManyToOne
-    @JoinColumn(name = "TS_PLATAFORMA", referencedColumnName = "TP_ID", nullable = false)
-    private Plataformas plataforma;
+    @Column(name = "TS_PLATAFORMA")
+    private String plataforma;
     @Column(name = "TS_TIPO")
     private String tipo;
     @Column(name = "TS_TEMPORADAS")
@@ -42,11 +40,11 @@ public class Serie {
         this.titulo = titulo;
     }
 
-    public Plataformas getPlataforma() {
+    public String getPlataforma() {
         return plataforma;
     }
 
-    public void setPlataforma(Plataformas plataforma) {
+    public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
     }
 

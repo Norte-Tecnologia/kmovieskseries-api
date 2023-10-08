@@ -1,7 +1,6 @@
 package com.elbertribeiro.serie;
 
 import com.elbertribeiro.usuario.Usuario;
-import com.elbertribeiro.plataformas.PlataformasConvert;
 
 public class SerieConvert {
     private SerieConvert() {
@@ -10,8 +9,7 @@ public class SerieConvert {
     public static SerieDto serieToDto(Serie serie) {
         return new SerieDto(
                 serie.getTitulo(),
-                PlataformasConvert.plataformaToDto(serie.getPlataforma()),
-                serie.getPlataforma().getUrlLogo(),
+                serie.getPlataforma(),
                 serie.getTipo(),
                 serie.getTemporadas(),
                 serie.getEpisodiosPorTemporada(),
@@ -22,7 +20,7 @@ public class SerieConvert {
 
     public static Serie serieToEntity(SerieDto serie) {
         Serie serieEntity = new Serie();
-        serieEntity.setPlataforma(PlataformasConvert.plataformaToEntity(serie.plataforma()));
+        serieEntity.setPlataforma(serieEntity.getPlataforma());
         serieEntity.setTipo(serie.tipo());
         serieEntity.setTitulo(serie.titulo());
         serieEntity.setTemporadas(serie.temporadas());

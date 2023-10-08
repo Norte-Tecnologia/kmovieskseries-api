@@ -26,8 +26,8 @@ public class SerieService {
 
     public Serie salvarSerie(Serie serie) {
         Plataformas plataformas = plataformasService
-                .listarPlataformasByNome(serie.getPlataforma().getName());
-        serie.setPlataforma(plataformas);
+                .listarPlataformasByNome(serie.getPlataforma());
+        serie.setPlataforma(plataformas.getName());
         return serieRepository.save(serie);
     }
 
