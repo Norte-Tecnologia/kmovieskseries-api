@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Serie {
     @Id
     @Column(name = "TS_ID")
-    private Long id;
+    private String id;
     @Column(name = "TS_TITULO")
     private String titulo;
     @Column(name = "TS_PLATAFORMA")
@@ -24,11 +24,11 @@ public class Serie {
     @Column(name = "ID_USUARIO")
     private Integer usuario;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
