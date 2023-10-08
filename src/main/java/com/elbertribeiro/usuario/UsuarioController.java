@@ -1,5 +1,6 @@
 package com.elbertribeiro.usuario;
 
+import com.elbertribeiro.excecao.ValidacaoExcecao;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 /*import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -35,7 +36,7 @@ public class UsuarioController {
                 .body(usuarioService
                 .createIdUser(Optional.ofNullable(usuarioDto)
                         .map(UsuarioConvert::usuarioToEntity)
-                        .orElseThrow(() -> new RuntimeException("Erro ao criar usuario"))
+                        .orElseThrow(() -> new ValidacaoExcecao("Erro ao criar usuario"))
                 ));
     }
 }
