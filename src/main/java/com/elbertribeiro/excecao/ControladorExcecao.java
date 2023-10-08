@@ -2,6 +2,9 @@ package com.elbertribeiro.excecao;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataAccessResourceFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @ControllerAdvice
 public class ControladorExcecao {
+    private static final Logger logger = LoggerFactory.getLogger(ControladorExcecao.class);
     @ExceptionHandler(ValidacaoExcecao.class)
     @ResponseBody
     InformacaoErro ouvinteErrosDeValidacao(ValidacaoExcecao excecaoDeValidacao, HttpServletRequest request, HttpServletResponse response) {
@@ -22,6 +26,7 @@ public class ControladorExcecao {
     @ResponseBody
     InformacaoErro ouvinteExcecao(Exception excecao, HttpServletRequest request, HttpServletResponse response) {
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        logger.error(excecao.getMessage(), excecao.getCause());
         return new InformacaoErro(response.getStatus(), request.getRequestURI(), excecao.getMessage());
     }
 
