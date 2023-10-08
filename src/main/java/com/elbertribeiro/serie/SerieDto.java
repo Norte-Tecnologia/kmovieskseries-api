@@ -1,6 +1,5 @@
 package com.elbertribeiro.serie;
 
-import com.elbertribeiro.plataformas.PlataformasDto;
 import jakarta.validation.constraints.NotNull;
 
 /**
