@@ -2,15 +2,13 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "homologacao" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "homologacao" ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
