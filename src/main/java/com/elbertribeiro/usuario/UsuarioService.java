@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.usuario;
+package com.elbertribeiro.usuario;
 
 import org.springframework.stereotype.Service;
 

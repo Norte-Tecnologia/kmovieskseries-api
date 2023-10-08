@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.serie;
+package com.elbertribeiro.serie;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

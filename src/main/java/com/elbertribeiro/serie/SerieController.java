@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.serie;
+package com.elbertribeiro.serie;
 
 import jakarta.validation.constraints.NotNull;
 import org.springframework.web.bind.annotation.*;

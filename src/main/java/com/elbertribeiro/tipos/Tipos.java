@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.tipos;
+package com.elbertribeiro.tipos;
 
 public interface Tipos {
     Integer getId();

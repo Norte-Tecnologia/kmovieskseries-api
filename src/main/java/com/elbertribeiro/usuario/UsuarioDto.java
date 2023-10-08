@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.usuario;
+package com.elbertribeiro.usuario;
 
 import jakarta.validation.constraints.NotBlank;
 

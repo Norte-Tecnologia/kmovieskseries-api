@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.tipos;
+package com.elbertribeiro.tipos;
 
 import org.springframework.web.bind.annotation.*;
 

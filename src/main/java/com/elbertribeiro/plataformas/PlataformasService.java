@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.plataformas;
+package com.elbertribeiro.plataformas;
 
 import org.springframework.stereotype.Service;
 

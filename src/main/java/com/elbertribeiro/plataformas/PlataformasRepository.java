@@ -1,4 +1,4 @@
-package com.elbertribeiro.kmovieskseries.plataformas;
+package com.elbertribeiro.plataformas;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,15 +1,12 @@
-package com.elbertribeiro.kmovieskseries.usuario;
+package com.elbertribeiro.usuario;
 
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 /*import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;*/
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 import static org.springframework.http.ResponseEntity.status;

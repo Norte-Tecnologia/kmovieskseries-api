@@ -1,6 +1,6 @@
-package com.elbertribeiro.kmovieskseries.serie;
+package com.elbertribeiro.serie;
 
-import com.elbertribeiro.kmovieskseries.plataformas.PlataformasDto;
+import com.elbertribeiro.plataformas.PlataformasDto;
 import jakarta.validation.constraints.NotNull;
 
 /**

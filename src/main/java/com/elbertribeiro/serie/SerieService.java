@@ -1,7 +1,7 @@
-package com.elbertribeiro.kmovieskseries.serie;
+package com.elbertribeiro.serie;
 
-import com.elbertribeiro.kmovieskseries.plataformas.PlataformasEntity;
-import com.elbertribeiro.kmovieskseries.plataformas.PlataformasService;
+import com.elbertribeiro.plataformas.PlataformasEntity;
+import com.elbertribeiro.plataformas.PlataformasService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

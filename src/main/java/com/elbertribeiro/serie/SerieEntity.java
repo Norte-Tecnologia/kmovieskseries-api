@@ -1,6 +1,6 @@
-package com.elbertribeiro.kmovieskseries.serie;
+package com.elbertribeiro.serie;
 
-import com.elbertribeiro.kmovieskseries.plataformas.PlataformasEntity;
+import com.elbertribeiro.plataformas.PlataformasEntity;
 import jakarta.persistence.*;
 
 @Entity
