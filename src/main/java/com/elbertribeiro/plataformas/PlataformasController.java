@@ -11,7 +11,7 @@ import java.util.Optional;
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
-@RequestMapping("/plataformas")
+@RequestMapping(value = "plataformas", produces = "application/json")
 public class PlataformasController {
     private final PlataformasService plataformasService;
 
