@@ -4,7 +4,7 @@ import com.elbertribeiro.plataformas.PlataformasDto;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * DTO for {@link SerieEntity}
+ * DTO for {@link Serie}
  */
 public record SerieDto(
         @NotNull(message = "O titulo da obra não pode ser nulo")
