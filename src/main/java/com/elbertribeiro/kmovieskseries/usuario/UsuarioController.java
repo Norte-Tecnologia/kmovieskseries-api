@@ -1,13 +1,18 @@
 package com.elbertribeiro.kmovieskseries.usuario;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 /*import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;*/
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+
+import static org.springframework.http.ResponseEntity.status;
 
 @RestController
 @RequestMapping("usuario")
@@ -28,13 +33,12 @@ public class UsuarioController {
     }*/
 
     @PostMapping
-    @ResponseBody
-    @ResponseStatus(HttpStatus.CREATED)
-    public String createUser(@RequestBody UsuarioDto usuarioDto) {
-        return usuarioService
+    public ResponseEntity<String> createUser(@RequestBody @Valid UsuarioDto usuarioDto) {
+        return status(HttpStatus.CREATED)
+                .body(usuarioService
                 .createIdUser(Optional.ofNullable(usuarioDto)
                         .map(UsuarioConvert::usuarioToEntity)
                         .orElseThrow(() -> new RuntimeException("Erro ao criar usuario"))
-                );
+                ));
     }
 }
