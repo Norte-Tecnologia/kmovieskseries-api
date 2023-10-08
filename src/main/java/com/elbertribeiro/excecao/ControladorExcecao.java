@@ -45,4 +45,12 @@ public class ControladorExcecao {
                 request.getRequestURI(),
                 "Erro no campo " + mensagem.getField() + ": " + mensagem.getDefaultMessage());
     }
+
+    @ExceptionHandler(DataAccessResourceFailureException.class)
+    @ResponseBody
+    InformacaoErro ouvinteExcecao(DataAccessResourceFailureException excecao, HttpServletRequest request, HttpServletResponse response) {
+        response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+        logger.error(excecao.getMessage(), excecao.getCause());
+        return new InformacaoErro(response.getStatus(), request.getRequestURI(), "Falha ao se conectar com o banco de dados");
+    }
 }
