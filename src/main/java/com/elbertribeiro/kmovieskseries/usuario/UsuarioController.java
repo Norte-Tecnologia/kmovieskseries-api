@@ -30,7 +30,7 @@ public class UsuarioController {
     @PostMapping
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    public Integer createUser(@RequestBody UsuarioDto usuarioDto) {
+    public String createUser(@RequestBody UsuarioDto usuarioDto) {
         return usuarioService
                 .createIdUser(Optional.ofNullable(usuarioDto)
                         .map(UsuarioConvert::usuarioToEntity)

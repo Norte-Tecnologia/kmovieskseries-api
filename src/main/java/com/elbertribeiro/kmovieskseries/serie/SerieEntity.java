@@ -1,7 +1,6 @@
 package com.elbertribeiro.kmovieskseries.serie;
 
 import com.elbertribeiro.kmovieskseries.plataformas.PlataformasEntity;
-import com.elbertribeiro.kmovieskseries.usuario.Usuario;
 import jakarta.persistence.*;
 
 @Entity
@@ -24,9 +23,8 @@ public class SerieEntity {
     private Integer episodiosPorTemporada;
     @Column(name = "TS_ASSISTIDO")
     private Boolean assistido;
-    @ManyToOne
-    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "TU_ID", nullable = false)
-    private Usuario usuario;
+    @Column(name = "ID_USUARIO")
+    private Integer usuario;
 
     public Long getId() {
         return id;
@@ -76,11 +74,11 @@ public class SerieEntity {
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public Usuario getUsuario() {
+    public Integer getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Integer usuario) {
         this.usuario = usuario;
     }
 

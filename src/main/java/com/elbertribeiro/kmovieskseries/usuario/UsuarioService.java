@@ -10,7 +10,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Integer createIdUser(Usuario usuario){
+    public String createIdUser(Usuario usuario){
         return usuarioRepository.save(usuario).getId();
     }
 }

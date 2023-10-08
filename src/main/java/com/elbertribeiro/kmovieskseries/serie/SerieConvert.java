@@ -17,7 +17,7 @@ public class SerieConvert {
                 serieEntity.getTipo(),
                 serieEntity.getTemporadas(),
                 serieEntity.getEpisodiosPorTemporada(),
-                serieEntity.getUsuario().getId(),
+                serieEntity.getUsuario(),
                 serieEntity.getAssistido()
         );
     }
@@ -30,9 +30,9 @@ public class SerieConvert {
         serieEntity.setTemporadas(serie.temporadas());
         serieEntity.setEpisodiosPorTemporada(serie.episodiosPorTemporada());
         Usuario usr = new Usuario();
-        usr.setId(serie.idUsuario());
+        usr.setId(String.valueOf(serie.idUsuario()));
         serieEntity.setAssistido(serie.assistido());
-        serieEntity.setUsuario(usr);
+        serieEntity.setUsuario(serieEntity.getUsuario());
         return serieEntity;
     }
 }

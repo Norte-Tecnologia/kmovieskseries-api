@@ -1,16 +1,13 @@
 package com.elbertribeiro.kmovieskseries.usuario;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "TAB_USUARIO")
+@Document("TAB_USUARIO")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TU_ID")
-    private Integer id;
+    private String id;
 
-    @Column(name = "TU_NAME")
     private String name;
 
     public Usuario(String name) {
@@ -20,11 +17,11 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
