@@ -13,7 +13,7 @@ import java.util.Optional;
 import static org.springframework.http.ResponseEntity.status;
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping(value = "usuario", produces = "application/json")
 public class UsuarioController {
     private final UsuarioService usuarioService;
 

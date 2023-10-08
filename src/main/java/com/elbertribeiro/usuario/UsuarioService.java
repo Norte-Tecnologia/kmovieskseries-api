@@ -10,7 +10,11 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public String createIdUser(Usuario usuario){
-        return usuarioRepository.save(usuario).getId();
+    public String createIdUser(Usuario usuario) {
+        return this.criandoMensagem(usuarioRepository.save(usuario).getId());
+    }
+
+    private String criandoMensagem(String idUsuario) {
+        return "Usuario criado com sucesso sob o registro: " + idUsuario;
     }
 }
