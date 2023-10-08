@@ -1,14 +1,12 @@
 package com.elbertribeiro.tipos;
 
 import jakarta.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "TAB_TIPOS")
-public class Tipos implements Tipos {
+@Document("TAB_TIPOS")
+public class Tipos {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TT_ID")
-    private Integer id;
+    private String id;
 
     @Column(name = "TT_NAME")
     private String name;
@@ -20,11 +18,11 @@ public class Tipos implements Tipos {
     public Tipos() {
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

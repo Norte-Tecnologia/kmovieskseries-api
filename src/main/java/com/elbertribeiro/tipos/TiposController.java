@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/tipos")
+@RequestMapping("tipos")
 public class TiposController {
     private final TiposService tiposService;
 

@@ -1,7 +1,7 @@
 package com.elbertribeiro.tipos;
 
 public class TiposConvert {
-    public TiposConvert() {
+    private TiposConvert() {
     }
 
     public static TiposDto tipoToDto(Tipos tipos) {

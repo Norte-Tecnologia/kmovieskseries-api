@@ -1,8 +1,9 @@
 package com.elbertribeiro.tipos;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TiposRepository extends JpaRepository<Tipos, Integer> {
+public interface TiposRepository extends MongoRepository<Tipos, String> {
 }
