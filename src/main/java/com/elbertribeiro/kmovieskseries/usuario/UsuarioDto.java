@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class UsuarioDto {
     @NotNull
-    @NotEmpty(message = "não pode ser vazio")
+    @NotEmpty(message = "{usuario.campo.obrigatorio}")
     private String name;
 
     public String getName() {
