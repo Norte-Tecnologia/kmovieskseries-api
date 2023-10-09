@@ -1,7 +1,5 @@
 package com.elbertribeiro.serie;
 
-import com.elbertribeiro.plataformas.Plataformas;
-import com.elbertribeiro.plataformas.PlataformasService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,11 +9,8 @@ import java.util.Optional;
 public class SerieService {
     private final SerieRepository serieRepository;
 
-    private final PlataformasService plataformasService;
-
-    public SerieService(SerieRepository serieRepository, PlataformasService plataformasService) {
+    public SerieService(SerieRepository serieRepository) {
         this.serieRepository = serieRepository;
-        this.plataformasService = plataformasService;
     }
 
     public Serie buscaSerie(String titulo){
@@ -25,9 +20,6 @@ public class SerieService {
     }
 
     public Serie salvarSerie(Serie serie) {
-        Plataformas plataformas = plataformasService
-                .listarPlataformasByNome(serie.getPlataforma());
-        serie.setPlataforma(plataformas.getName());
         return serieRepository.save(serie);
     }
 
