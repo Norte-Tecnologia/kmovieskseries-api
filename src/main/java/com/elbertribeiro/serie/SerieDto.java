@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
 public record SerieDto(
         @NotNull(message = "O titulo da obra não pode ser nulo")
         String titulo,
-        String idPlataforma,
+        String plataforma,
         @NotNull
         String tipo,
         Integer temporadas,
