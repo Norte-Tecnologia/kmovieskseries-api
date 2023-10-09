@@ -1,6 +1,5 @@
 package com.elbertribeiro.serie;
 
-import com.elbertribeiro.usuario.Usuario;
 
 public class SerieConvert {
     private SerieConvert() {
@@ -18,17 +17,14 @@ public class SerieConvert {
         );
     }
 
-    public static Serie serieToEntity(SerieDto serie) {
+    public static Serie serieToEntity(NovaSerieDto serie) {
         Serie serieEntity = new Serie();
-        serieEntity.setPlataforma(serieEntity.getPlataforma());
-        serieEntity.setTipo(serie.tipo());
-        serieEntity.setTitulo(serie.titulo());
-        serieEntity.setTemporadas(serie.temporadas());
-        serieEntity.setEpisodiosPorTemporada(serie.episodiosPorTemporada());
-        Usuario usr = new Usuario();
-        usr.setId(String.valueOf(serie.idUsuario()));
-        serieEntity.setAssistido(serie.assistido());
-        serieEntity.setUsuario(serieEntity.getUsuario());
+        serieEntity.setPlataforma(serie.getStreaming().getNome());
+        serieEntity.setTipo(serie.getTipo());
+        serieEntity.setTitulo(serie.getTitulo());
+        serieEntity.setTemporadas(serie.getTemporadas());
+        serieEntity.setEpisodiosPorTemporada(serie.getEpisodiosPorTemporada());
+        serieEntity.setUsuario(serie.getIdUsuario());
         return serieEntity;
     }
 }
