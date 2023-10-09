@@ -1,6 +1,8 @@
 package com.elbertribeiro.serie;
 
+import com.elbertribeiro.excecao.ValidacaoExcecao;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.springframework.http.ResponseEntity.ok;
+import static org.springframework.http.ResponseEntity.status;
 
 @RestController
 @RequestMapping(value = "series", produces = "application/json")
@@ -28,13 +31,16 @@ public class SerieController {
     }
 
     @PostMapping
-    public Serie criarSerie(@RequestBody SerieDto serieDto) {
-        return serieService.salvarSerie(
+    public ResponseEntity<SerieDto> criarSerie(@RequestBody NovaSerieDto novaSerieDto) {
+        return status(HttpStatus.CREATED)
+                .body(Optional.ofNullable(serieService.salvarSerie(
                 Optional
-                        .ofNullable(serieDto)
+                        .ofNullable(novaSerieDto)
                         .map(SerieConvert::serieToEntity)
                         .orElseThrow(() -> new RuntimeException("n deu bom"))
-        );
+        ))
+                .map(SerieConvert::serieToDto)
+                .orElseThrow(() -> new ValidacaoExcecao("Não foi possivel exibir Serie criada")));
     }
 
     @PutMapping(value = "/{assistido}/{titulo}")
