@@ -1,10 +1,13 @@
 package com.elbertribeiro.serie;
 
 import jakarta.validation.constraints.NotNull;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
 @RequestMapping(value = "series", produces = "application/json")
@@ -16,12 +19,12 @@ public class SerieController {
     }
 
     @GetMapping
-    public List<SerieDto> listarSeries() {
-        return serieService
+    public ResponseEntity<List<SerieDto>> listarSeries() {
+        return ok(serieService
                 .listarSeries()
                 .stream()
                 .map(SerieConvert::serieToDto)
-                .toList();
+                .toList());
     }
 
     @PostMapping
