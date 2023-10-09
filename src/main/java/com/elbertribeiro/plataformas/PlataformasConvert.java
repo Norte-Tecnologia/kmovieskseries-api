@@ -19,4 +19,10 @@ public class PlataformasConvert {
         plataformas.setUrlLogo(plataformasDto.urlLogo());
         return plataformas;
     }
+
+    public static Plataformas plataformaToEntity(NovaPlataformaDto plataformasDto) {
+        Plataformas plataformas = new Plataformas();
+        plataformas.setName(plataformasDto.getName());
+        return plataformas;
+    }
 }

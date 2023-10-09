@@ -29,7 +29,7 @@ public class PlataformasController {
     }
 
     @PostMapping
-    public ResponseEntity<PlataformasDto> criarPlataforma(@RequestBody PlataformasDto plataformasDto) {
+    public ResponseEntity<PlataformasDto> criarPlataforma(@RequestBody NovaPlataformaDto plataformasDto) {
         return status(HttpStatus.CREATED)
                 .body(Optional
                         .ofNullable(plataformasService.salvarPlataforma(
