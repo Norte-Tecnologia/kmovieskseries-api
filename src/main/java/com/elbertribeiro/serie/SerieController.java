@@ -17,8 +17,11 @@ import static org.springframework.http.ResponseEntity.status;
 public class SerieController {
     private final SerieService serieService;
 
-    public SerieController(SerieService serieService) {
+    private final SerieConvert serieConvert;
+
+    public SerieController(SerieService serieService, SerieConvert serieConvert) {
         this.serieService = serieService;
+        this.serieConvert = serieConvert;
     }
 
     @GetMapping
@@ -26,7 +29,7 @@ public class SerieController {
         return ok(serieService
                 .listarSeries()
                 .stream()
-                .map(SerieConvert::serieToDto)
+                .map(serieConvert::serieToDto)
                 .toList());
     }
 
@@ -34,18 +37,26 @@ public class SerieController {
     public ResponseEntity<SerieDto> criarSerie(@RequestBody NovaSerieDto novaSerieDto) {
         return status(HttpStatus.CREATED)
                 .body(Optional.ofNullable(serieService.salvarSerie(
-                Optional
-                        .ofNullable(novaSerieDto)
-                        .map(SerieConvert::serieToEntity)
-                        .orElseThrow(() -> new RuntimeException("n deu bom"))
-        ))
-                .map(SerieConvert::serieToDto)
-                .orElseThrow(() -> new ValidacaoExcecao("Não foi possivel exibir Serie criada")));
+                                Optional
+                                        .ofNullable(novaSerieDto)
+                                        .map(serieConvert::serieToEntity)
+                                        .orElseThrow(() -> new RuntimeException("n deu bom"))
+                        ))
+                        .map(serieConvert::serieToDto)
+                        .orElseThrow(() -> new ValidacaoExcecao("Não foi possivel exibir Serie criada")));
     }
 
-    @PutMapping(value = "/{assistido}/{titulo}")
-    public String criarSerie(@PathVariable @NotNull Boolean assistido,
-                             @PathVariable @NotNull String titulo) {
-        return serieService.atualizarAssistido(assistido, titulo);
+    @PutMapping(value = "/{assistido}/{titulo}/{tipo}")
+    public String atualizarSerie(@PathVariable @NotNull Boolean assistido,
+                                 @PathVariable @NotNull String titulo,
+                                 @PathVariable @NotNull Integer tipo) {
+        return serieService.atualizarAssistido(assistido, titulo, tipo);
+    }
+
+    @DeleteMapping(value = "/{titulo}/{tipo}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void deletarSerie(@PathVariable @NotNull String titulo,
+                             @PathVariable @NotNull Integer tipo) {
+        serieService.deletarSerie(titulo, tipo);
     }
 }
