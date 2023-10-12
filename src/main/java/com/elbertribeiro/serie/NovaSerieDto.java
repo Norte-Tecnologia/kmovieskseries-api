@@ -1,5 +1,6 @@
 package com.elbertribeiro.serie;
 
+import com.elbertribeiro.plataforma.PlataformaStreaming;
 import jakarta.validation.constraints.NotBlank;
 
 /**
