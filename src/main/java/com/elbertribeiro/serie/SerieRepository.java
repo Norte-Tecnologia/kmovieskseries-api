@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SerieRepository extends MongoRepository<Serie, Long> {
 
-    Serie findAllByTituloAndTipo(String titulo, String tipo);
+    Serie findAllByTituloAndTipo(String titulo, Integer tipo);
 
-    Serie findByTituloAndTipo(String titulo, String tipo);
+    Serie findByTituloAndTipo(String titulo, Integer tipo);
 }

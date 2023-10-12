@@ -13,7 +13,7 @@ public class SerieService {
         this.serieRepository = serieRepository;
     }
 
-    public Serie buscaSerie(String titulo, String tipo){
+    public Serie buscaSerie(String titulo, Integer tipo){
         return Optional.ofNullable(serieRepository
                 .findAllByTituloAndTipo(titulo, tipo))
                 .orElseThrow(() -> new RuntimeException("Série não encontrada"));
@@ -23,7 +23,7 @@ public class SerieService {
         return serieRepository.save(serie);
     }
 
-    public String atualizarAssistido(Boolean assistido, String titulo, String tipo) {
+    public String atualizarAssistido(Boolean assistido, String titulo, Integer tipo) {
         Serie serie = this.buscaSerie(titulo, tipo);
         serie.setAssistido(assistido);
         serieRepository.save(serie);
@@ -34,7 +34,7 @@ public class SerieService {
         return serieRepository.findAll();
     }
 
-    public void deletarSerie(String titulo, String tipo) {
+    public void deletarSerie(String titulo, Integer tipo) {
         Serie serie = serieRepository.findByTituloAndTipo(titulo, tipo);
         serieRepository.delete(serie);
     }

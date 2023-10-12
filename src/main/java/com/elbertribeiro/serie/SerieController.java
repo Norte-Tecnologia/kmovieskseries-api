@@ -49,14 +49,14 @@ public class SerieController {
     @PutMapping(value = "/{assistido}/{titulo}/{tipo}")
     public String atualizarSerie(@PathVariable @NotNull Boolean assistido,
                                  @PathVariable @NotNull String titulo,
-                                 @PathVariable @NotNull String tipo) {
+                                 @PathVariable @NotNull Integer tipo) {
         return serieService.atualizarAssistido(assistido, titulo, tipo);
     }
 
-    @DeleteMapping(value = "/{titulo}")
+    @DeleteMapping(value = "/{titulo}/{tipo}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deletarSerie(@PathVariable @NotNull String titulo,
-                             @PathVariable @NotNull String tipo) {
+                             @PathVariable @NotNull Integer tipo) {
         serieService.deletarSerie(titulo, tipo);
     }
 }

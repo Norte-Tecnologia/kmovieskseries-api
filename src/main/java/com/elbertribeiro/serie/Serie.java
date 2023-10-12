@@ -14,7 +14,7 @@ public class Serie {
     @Column(name = "TS_PLATAFORMA")
     private Integer plataforma;
     @Column(name = "TS_TIPO")
-    private String tipo;
+    private Integer tipo;
     @Column(name = "TS_TEMPORADAS")
     private Integer temporadas;
     @Column(name = "TS_EPISODIOS_POR_TEMPORADA")
@@ -48,11 +48,11 @@ public class Serie {
         this.plataforma = plataforma;
     }
 
-    public String getTipo() {
+    public Integer getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Integer tipo) {
         this.tipo = tipo;
     }
 
