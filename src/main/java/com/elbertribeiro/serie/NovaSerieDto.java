@@ -1,6 +1,7 @@
 package com.elbertribeiro.serie;
 
 import com.elbertribeiro.plataforma.PlataformaStreaming;
+import com.elbertribeiro.tipo.Tipo;
 import jakarta.validation.constraints.NotBlank;
 
 /**
@@ -12,7 +13,7 @@ public class NovaSerieDto {
     @NotBlank
     private PlataformaStreaming streaming;
     @NotBlank
-    private String tipo;
+    private Tipo tipo;
     @NotBlank
     private Integer temporadas;
     @NotBlank
@@ -38,11 +39,11 @@ public class NovaSerieDto {
         this.streaming = streaming;
     }
 
-    public String getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
 
