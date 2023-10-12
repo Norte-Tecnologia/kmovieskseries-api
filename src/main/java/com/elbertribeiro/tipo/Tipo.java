@@ -1,6 +1,7 @@
 package com.elbertribeiro.tipo;
 
 public enum Tipo {
+    INITIAL(0, "Initial"),
     SERIE(1, "Série"),
     FILME(2, "Filme"),
     DOCUMENTARIO(3, "Documentário"),
