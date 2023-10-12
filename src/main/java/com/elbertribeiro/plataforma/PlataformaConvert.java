@@ -9,7 +9,8 @@ public class PlataformaConvert {
     public static PlataformaDto plataformaToDto(PlataformaStreaming plataformaStreaming) {
         return new PlataformaDto(
                 plataformaStreaming.getId(),
-                plataformaStreaming.getNome()
+                plataformaStreaming.getNome(),
+                plataformaStreaming.getLogo()
         );
     }
 
