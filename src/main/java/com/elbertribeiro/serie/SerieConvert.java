@@ -2,6 +2,7 @@ package com.elbertribeiro.serie;
 
 
 import com.elbertribeiro.plataforma.PlataformaService;
+import com.elbertribeiro.tipo.TipoService;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,8 +10,11 @@ public class SerieConvert {
 
     private final PlataformaService plataformaService;
 
-    public SerieConvert(PlataformaService plataformaService) {
+    private final TipoService tipoService;
+
+    public SerieConvert(PlataformaService plataformaService, TipoService tipoService) {
         this.plataformaService = plataformaService;
+        this.tipoService = tipoService;
     }
 
 
@@ -19,7 +23,7 @@ public class SerieConvert {
                 serie.getTitulo(),
                 serie.getPlataforma(),
                 plataformaService.buscaNomeById(serie.getPlataforma()),
-                serie.getTipo(),
+                tipoService.buscaNomeTipoById(serie.getTipo()),
                 serie.getTemporadas(),
                 serie.getEpisodiosPorTemporada(),
                 serie.getUsuario(),
@@ -31,7 +35,7 @@ public class SerieConvert {
     public Serie serieToEntity(NovaSerieDto serie) {
         Serie serieEntity = new Serie();
         serieEntity.setPlataforma(serie.getStreaming().getId());
-        serieEntity.setTipo(serie.getTipo());
+        serieEntity.setTipo(serie.getTipo().getId());
         serieEntity.setTitulo(serie.getTitulo());
         serieEntity.setTemporadas(serie.getTemporadas());
         serieEntity.setEpisodiosPorTemporada(serie.getEpisodiosPorTemporada());
