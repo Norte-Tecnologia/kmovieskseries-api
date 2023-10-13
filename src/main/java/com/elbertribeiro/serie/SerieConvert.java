@@ -23,6 +23,7 @@ public class SerieConvert {
                 serie.getTitulo(),
                 serie.getPlataforma(),
                 plataformaService.buscaNomeById(serie.getPlataforma()),
+                serie.getTipo(),
                 tipoService.buscaNomeTipoById(serie.getTipo()),
                 serie.getTemporadas(),
                 serie.getEpisodiosPorTemporada(),
