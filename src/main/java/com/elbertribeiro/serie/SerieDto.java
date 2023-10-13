@@ -11,6 +11,7 @@ public record SerieDto(
         @NotNull
         Integer plataforma,
         String nomePlataforma,
+        Integer idTipo,
         @NotNull(message = "O tipo da obra não pode ser nulo")
         String tipo,
         Integer temporadas,
